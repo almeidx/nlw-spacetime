@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["fastify"]
+	"cSpell.words": ["fastify", "Jamjuree", "lucide", "Rocketseat"],
+	"eslint.workingDirectories": ["./mobile", "./server", "./web"]
 }
