@@ -1,4 +1,3 @@
-import { User } from "lucide-react";
 import Image from "next/image";
 import { getUser } from "@/lib/auth.ts";
 
@@ -11,7 +10,7 @@ export function Profile() {
 
 			<p className="max-w-[160px] text-sm leading-snug">
 				{name}
-				<a className="block text-red-400 hover:text-red-300" href="">
+				<a className="block text-red-400 hover:text-red-300" href="/api/auth/logout">
 					Terminar sessão
 				</a>
 			</p>

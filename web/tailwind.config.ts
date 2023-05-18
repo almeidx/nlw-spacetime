@@ -1,3 +1,4 @@
+import formsPlugin from "@tailwindcss/forms";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,5 +71,5 @@ export default {
 		},
 	},
 
-	plugins: [],
+	plugins: [formsPlugin],
 } satisfies Config;

@@ -128,5 +128,7 @@ export async function memoryRoutes(app: FastifyInstance) {
 				id,
 			},
 		});
+
+		return undefined;
 	});
 }
