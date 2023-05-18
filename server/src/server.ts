@@ -1,14 +1,16 @@
 import cors from "@fastify/cors";
+import jwt from "@fastify/jwt";
 import fastify from "fastify";
+import { authRoutes } from "./routes/auth.js";
 import { memoryRoutes } from "./routes/memories.js";
 
 const app = fastify();
 
-app.register(cors, {
-	origin: true,
-});
+await app.register(cors, { origin: true });
+await app.register(jwt, { secret: "spacetime" });
 
-app.register(memoryRoutes);
+await app.register(authRoutes);
+await app.register(memoryRoutes);
 
 await app.listen({ port: 3_333 });
 

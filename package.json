@@ -46,8 +46,7 @@
 		},
 		"ignorePatterns": [
 			"**/dist/*",
-			"**/node_modules/*",
-			".yarn/*"
+			"**/node_modules/*"
 		],
 		"root": true
 	},
@@ -70,7 +69,6 @@
 			"eslint-plugin-astro": "npm:@almeidx/empty@1.0.1",
 			"eslint-plugin-cypress": "npm:@almeidx/empty@1.0.1",
 			"eslint-plugin-jest": "npm:@almeidx/empty@1.0.1",
-			"eslint-plugin-jsx-a11y": "npm:@almeidx/empty@1.0.1",
 			"eslint-plugin-mdx": "npm:@almeidx/empty@1.0.1",
 			"eslint-plugin-rxjs": "npm:@almeidx/empty@1.0.1",
 			"eslint-plugin-rxjs-angular": "npm:@almeidx/empty@1.0.1",

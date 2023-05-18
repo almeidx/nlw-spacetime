@@ -3,19 +3,68 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"watch": "tsx watch src/server.ts"
+		"build:typecheck": "tsc --noEmit",
+		"build:write": "rimraf dist && esbuild src/**/*.ts src/*.ts --platform=node --target=node18 --outdir=dist --format=esm --sourcemap",
+		"build": "pnpm build:typecheck && pnpm build:write",
+		"format": "prettier --write . && eslint src --ext ts --fix",
+		"fmt": "pnpm format",
+		"lint": "prettier --check . && eslint src --ext ts",
+		"start": "env-cmd node --enable-source-maps dist/server.js",
+		"watch": "env-cmd tsx watch src/server.ts"
 	},
 	"eslintConfig": {
-		"extends": "../"
+		"parserOptions": {
+			"project": [
+				"./tsconfig.eslint.json"
+			]
+		},
+		"extends": [
+			"neon/common",
+			"neon/node",
+			"neon/module",
+			"neon/no-deprecated",
+			"neon/typescript",
+			"neon/prettier"
+		],
+		"rules": {
+			"logical-assignment-operators": [
+				2,
+				"always",
+				{
+					"enforceForIfStatements": true
+				}
+			],
+			"prefer-named-capture-group": 0,
+			"@typescript-eslint/consistent-type-definitions": [
+				2,
+				"interface"
+			],
+			"@typescript-eslint/no-import-type-side-effects": 2,
+			"import/no-duplicates": [
+				2,
+				{
+					"prefer-inline": true
+				}
+			],
+			"unicorn/filename-case": 2
+		},
+		"ignorePatterns": [
+			"**/dist/*",
+			"**/node_modules/*",
+			".yarn/*"
+		],
+		"root": true
 	},
 	"dependencies": {
 		"@fastify/cors": "^8.2.1",
+		"@fastify/jwt": "^6.7.1",
 		"@prisma/client": "4.14.0",
 		"fastify": "^4.17.0",
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
 		"@types/node": "^18.16.12",
+		"env-cmd": "^10.1.0",
 		"esbuild": "^0.17.19",
 		"eslint": "^8.40.0",
 		"eslint-config-neon": "^0.1.47",
@@ -23,6 +72,7 @@
 		"prisma": "^4.14.0",
 		"rimraf": "^5.0.0",
 		"tsx": "^3.12.7",
-		"typescript": "^5.0.4"
+		"typescript": "^5.0.4",
+		"undici": "^5.22.1"
 	}
 }
