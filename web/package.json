@@ -38,7 +38,8 @@
 			"promise/prefer-await-to-callbacks": 0,
 			"promise/prefer-await-to-then": 0,
 			"tailwindcss/no-custom-classname": 0,
-			"unicorn/consistent-function-scoping": 0
+			"unicorn/consistent-function-scoping": 0,
+			"react/jsx-no-bind": 0
 		},
 		"ignorePatterns": [
 			".next/*",
@@ -52,16 +53,16 @@
 		"@tailwindcss/forms": "^0.5.3",
 		"jwt-decode": "^3.1.2",
 		"lucide-react": "^0.216.0",
-		"next": "^13.4.2",
+		"next": "^13.4.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@types/node": "^18.16.12",
+		"@types/node": "^18.16.13",
 		"@types/react": "^18.2.6",
 		"@types/react-dom": "^18.2.4",
 		"autoprefixer": "^10.4.14",
-		"eslint": "^8.40.0",
+		"eslint": "^8.41.0",
 		"eslint-config-neon": "^0.1.47",
 		"eslint-plugin-tailwindcss": "^3.12.0",
 		"postcss": "^8.4.23",

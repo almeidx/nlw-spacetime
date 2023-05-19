@@ -21,6 +21,7 @@ export async function memoryRoutes(app: FastifyInstance) {
 			id: memory.id,
 			coverUrl: memory.coverUrl,
 			excerpt: memory.content.length > 188 ? memory.content.slice(0, 118) + "..." : memory.content,
+			createdAt: memory.createdAt,
 		}));
 	});
 

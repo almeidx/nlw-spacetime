@@ -51,7 +51,7 @@
 		"root": true
 	},
 	"devDependencies": {
-		"eslint": "^8.40.0",
+		"eslint": "^8.41.0",
 		"eslint-config-neon": "^0.1.47",
 		"prettier": "^2.8.8"
 	},

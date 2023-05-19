@@ -1,6 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { API_URL } from "@/lib/api.ts";
 
+export const runtime = "edge";
+
 export async function GET(request: NextRequest) {
 	const { searchParams } = new URL(request.url);
 	const code = searchParams.get("code");
